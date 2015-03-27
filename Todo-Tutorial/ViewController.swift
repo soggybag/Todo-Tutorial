@@ -10,17 +10,18 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var array = ["A", "B", "C", "D", "F"]
     
     // MARK: Table View Delegate Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel?.text = "Hello Word"
+        cell.textLabel?.text = array[indexPath.row]
         
         return cell
     }
