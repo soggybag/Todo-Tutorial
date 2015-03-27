@@ -8,9 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddTodoViewControllerDelegate {
 
     var array = [TodoItem]()
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    // MARK: Add Todo Delegate Methods
+    
+    func addNew(todo: TodoItem) {
+        array.append(todo)
+        tableView.reloadData()
+    }
+    
+    
+    // MARK: Segue Methods
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddTodoSegue" {
+            let destVC = segue.destinationViewController as AddTodoViewController
+            destVC.delegate = self
+        }
+    }
+    
     
     // MARK: Table View Delegate Methods
     
