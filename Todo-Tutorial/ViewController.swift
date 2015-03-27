@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var array = ["A", "B", "C", "D", "F"]
+    var array = [TodoItem]()
     
     // MARK: Table View Delegate Methods
     
@@ -21,7 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
         
-        cell.textLabel?.text = array[indexPath.row]
+        let todo = array[indexPath.row]
+        cell.textLabel?.text = todo.name
+        cell.detailTextLabel?.text = todo.note
         
         return cell
     }
@@ -31,6 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        array.append(TodoItem(name: "Hello", note: "World"))
+        array.append(TodoItem(name: "Foo", note: "Bar"))
+        array.append(TodoItem(name: "Eat", note: "Lunch"))
     }
 
     override func didReceiveMemoryWarning() {

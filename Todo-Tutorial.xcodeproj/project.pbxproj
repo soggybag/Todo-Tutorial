@@ -13,6 +13,7 @@
 		7B3CBB551AC5FE8000B42B9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B3CBB541AC5FE8000B42B9E /* Images.xcassets */; };
 		7B3CBB581AC5FE8100B42B9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B3CBB561AC5FE8100B42B9E /* LaunchScreen.xib */; };
 		7B3CBB641AC5FE8100B42B9E /* Todo_TutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3CBB631AC5FE8100B42B9E /* Todo_TutorialTests.swift */; };
+		7B3CBB6E1AC601D000B42B9E /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3CBB6D1AC601D000B42B9E /* TodoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7B3CBB5D1AC5FE8100B42B9E /* Todo-TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Todo-TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3CBB621AC5FE8100B42B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3CBB631AC5FE8100B42B9E /* Todo_TutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_TutorialTests.swift; sourceTree = "<group>"; };
+		7B3CBB6D1AC601D000B42B9E /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				7B3CBB4D1AC5FE8000B42B9E /* AppDelegate.swift */,
 				7B3CBB4F1AC5FE8000B42B9E /* ViewController.swift */,
+				7B3CBB6D1AC601D000B42B9E /* TodoItem.swift */,
 				7B3CBB511AC5FE8000B42B9E /* Main.storyboard */,
 				7B3CBB541AC5FE8000B42B9E /* Images.xcassets */,
 				7B3CBB561AC5FE8100B42B9E /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B3CBB501AC5FE8000B42B9E /* ViewController.swift in Sources */,
+				7B3CBB6E1AC601D000B42B9E /* TodoItem.swift in Sources */,
 				7B3CBB4E1AC5FE8000B42B9E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
