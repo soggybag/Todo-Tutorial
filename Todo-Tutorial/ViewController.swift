@@ -43,6 +43,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        let color3 = UIColor(white: 146/255, alpha: 1)
+        let color5 = UIColor(white: 116/255, alpha: 1)
+        
+        cell.textLabel?.textColor = color3
+        cell.detailTextLabel?.textColor = color5
         
         let todo = array[indexPath.row]
         cell.textLabel?.text = todo.name

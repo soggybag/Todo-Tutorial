@@ -12,10 +12,31 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    
+    func appStyles() {
+        let color1 = UIColor(red: 40/255, green: 45/255, blue: 45/255, alpha: 1)
+        let color2 = UIColor(red: 54/255, green: 61/255, blue: 61/255, alpha: 1)
+        let color3 = UIColor(white: 146/255, alpha: 1)
+        let color4 = UIColor(red: 231/255, green: 77/255, blue: 75/255, alpha: 1)
+        
+        UINavigationBar.appearance().barStyle = UIBarStyle.Black
+        UINavigationBar.appearance().tintColor = color4
+        UINavigationBar.appearance().translucent = false
+        
+        UITableView.appearance().backgroundColor = color1
+        UITableView.appearance().separatorColor = color2
+        
+        UITableViewCell.appearance().backgroundColor = color1
+        
+    }
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        appStyles()
+        
         return true
     }
 
