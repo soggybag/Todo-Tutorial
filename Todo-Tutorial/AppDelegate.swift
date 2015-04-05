@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITableViewCell.appearance().backgroundColor = color1
         
+        let cellBackground = UIView()
+        cellBackground.backgroundColor = color2
+        UITableViewCell.appearance().selectedBackgroundView = cellBackground
+        
     }
     
 
