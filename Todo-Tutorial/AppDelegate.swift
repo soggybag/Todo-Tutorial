@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITableView.appearance().separatorColor = color2
         
         UITableViewCell.appearance().backgroundColor = color1
+        UITableViewCell.appearance().tintColor = color4
         
         let cellBackground = UIView()
         cellBackground.backgroundColor = color2

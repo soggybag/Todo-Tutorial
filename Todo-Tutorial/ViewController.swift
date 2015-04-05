@@ -53,6 +53,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = todo.name
         cell.detailTextLabel?.text = todo.note
         
+        if todo.completed {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
         return cell
     }
     
@@ -69,6 +75,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let todo = array[indexPath.row]
+        todo.completed = !todo.completed
+        if todo.completed {
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell?.accessoryType = UITableViewCellAccessoryType.None
+        }
+    }
     
     // MARK: View Lifecycle Methods
     
