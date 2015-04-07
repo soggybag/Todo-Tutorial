@@ -1,0 +1,27 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 13,
+          "top" : 14,
+          "right" : 13,
+          "left" : 12
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "TextField-Back.png",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

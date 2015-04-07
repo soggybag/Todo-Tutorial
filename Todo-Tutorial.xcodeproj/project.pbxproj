@@ -413,6 +413,7 @@
 				7B3CBB691AC5FE8100B42B9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B3CBB6A1AC5FE8100B42B9E /* Build configuration list for PBXNativeTarget "Todo-TutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				7B3CBB6C1AC5FE8100B42B9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

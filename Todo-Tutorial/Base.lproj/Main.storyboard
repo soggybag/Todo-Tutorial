@@ -85,31 +85,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftb-tk-pgO">
-                                <rect key="frame" x="16" y="80" width="288" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField-Back" translatesAutoresizingMaskIntoConstraints="NO" id="QoJ-PB-sbW">
+                                <rect key="frame" x="16" y="82" width="288" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Ta5-Ls-tqD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextField-Back" translatesAutoresizingMaskIntoConstraints="NO" id="c4T-YW-etC">
+                                <rect key="frame" x="16" y="142" width="288" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="UN9-2K-aJN"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftb-tk-pgO">
+                                <rect key="frame" x="27" y="91" width="266" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gvE-rP-edx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.91573256340579723" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="syD-PT-2PG">
-                                <rect key="frame" x="16" y="128" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="syD-PT-2PG">
+                                <rect key="frame" x="27" y="152" width="266" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vKV-Fd-vah"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.91898777173913049" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.38255774456521741" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="syD-PT-2PG" firstAttribute="trailing" secondItem="vms-LC-2lw" secondAttribute="trailingMargin" id="0zD-14-hnA"/>
-                            <constraint firstItem="ftb-tk-pgO" firstAttribute="top" secondItem="bLg-Ad-Hoc" secondAttribute="bottom" constant="16" id="2uO-c5-gAU"/>
-                            <constraint firstItem="syD-PT-2PG" firstAttribute="top" secondItem="ftb-tk-pgO" secondAttribute="bottom" constant="18" id="EYv-ZG-eSY"/>
-                            <constraint firstItem="ftb-tk-pgO" firstAttribute="trailing" secondItem="vms-LC-2lw" secondAttribute="trailingMargin" id="Kwt-cr-nI0"/>
-                            <constraint firstItem="ftb-tk-pgO" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leadingMargin" id="XgH-fr-jIn"/>
-                            <constraint firstItem="syD-PT-2PG" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leadingMargin" id="wb8-Ty-FLv"/>
+                            <constraint firstItem="syD-PT-2PG" firstAttribute="trailing" secondItem="vms-LC-2lw" secondAttribute="trailingMargin" constant="-11" id="0zD-14-hnA"/>
+                            <constraint firstItem="ftb-tk-pgO" firstAttribute="top" secondItem="bLg-Ad-Hoc" secondAttribute="bottom" constant="27" id="2uO-c5-gAU"/>
+                            <constraint firstItem="c4T-YW-etC" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leadingMargin" id="4uH-OO-B9G"/>
+                            <constraint firstAttribute="trailing" secondItem="QoJ-PB-sbW" secondAttribute="trailing" constant="16" id="93R-je-GLW"/>
+                            <constraint firstItem="c4T-YW-etC" firstAttribute="top" secondItem="QoJ-PB-sbW" secondAttribute="bottom" constant="11" id="Dh8-VE-mai"/>
+                            <constraint firstItem="syD-PT-2PG" firstAttribute="top" secondItem="ftb-tk-pgO" secondAttribute="bottom" constant="31" id="EYv-ZG-eSY"/>
+                            <constraint firstItem="ftb-tk-pgO" firstAttribute="trailing" secondItem="vms-LC-2lw" secondAttribute="trailingMargin" constant="-11" id="Kwt-cr-nI0"/>
+                            <constraint firstItem="ftb-tk-pgO" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leadingMargin" constant="11" id="XgH-fr-jIn"/>
+                            <constraint firstItem="c4T-YW-etC" firstAttribute="trailing" secondItem="vms-LC-2lw" secondAttribute="trailingMargin" id="c97-Bp-Rpn"/>
+                            <constraint firstItem="QoJ-PB-sbW" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leading" constant="16" id="jCO-bb-fOY"/>
+                            <constraint firstItem="QoJ-PB-sbW" firstAttribute="top" secondItem="bLg-Ad-Hoc" secondAttribute="bottom" constant="18" id="s7s-vt-f87"/>
+                            <constraint firstItem="syD-PT-2PG" firstAttribute="leading" secondItem="vms-LC-2lw" secondAttribute="leadingMargin" constant="11" id="wb8-Ty-FLv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Todo" id="OwI-5i-az2">
@@ -149,4 +169,7 @@
             <point key="canvasLocation" x="878" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="TextField-Back" width="26" height="28"/>
+    </resources>
 </document>
