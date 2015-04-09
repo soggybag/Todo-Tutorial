@@ -58,6 +58,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vge-XW-EdT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="VlN-Mz-4bc">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="vXZ-lx-hvc" id="ouL-ez-cXe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aan-Mf-hrN">
                             <connections>
                                 <segue destination="OWT-dG-UOv" kind="show" identifier="AddTodoSegue" id="eJp-Sj-hkU"/>
@@ -147,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGS-ze-m5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="387"/>
+            <point key="canvasLocation" x="1667" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dVo-tN-2lx">

@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func editButtonTapped(sender: UIBarButtonItem) {
+        tableView.editing = !tableView.editing
+    }
+    
     
     // MARK: Add Todo Delegate Methods
     
@@ -86,6 +90,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell?.accessoryType = UITableViewCellAccessoryType.None
         }
     }
+    
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let todo = array.removeAtIndex(sourceIndexPath.row)
+        array.insert(todo, atIndex: destinationIndexPath.row)
+    }
+    
+    
     
     // MARK: View Lifecycle Methods
     
