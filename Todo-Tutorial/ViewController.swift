@@ -33,8 +33,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddTodoSegue" {
-            let destVC = segue.destinationViewController as AddTodoViewController
+            let destVC = segue.destinationViewController as! AddTodoViewController
             destVC.delegate = self
+        } else if segue.identifier == "DetailSegue" {
+            let destVC = segue.destinationViewController as! DetailViewController
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                destVC.todo = array[indexPath.row]
+            }
         }
     }
     
@@ -46,7 +51,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         let color3 = UIColor(white: 146/255, alpha: 1)
         let color5 = UIColor(white: 116/255, alpha: 1)
         
@@ -80,6 +85,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        /*
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let todo = array[indexPath.row]
@@ -89,6 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             cell?.accessoryType = UITableViewCellAccessoryType.None
         }
+        */
     }
     
     
@@ -111,6 +118,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         array.append(TodoItem(name: "Hello", note: "World"))
         array.append(TodoItem(name: "Foo", note: "Bar"))
         array.append(TodoItem(name: "Eat", note: "Lunch"))
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
