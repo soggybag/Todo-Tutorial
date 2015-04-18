@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class DetailViewController: UIViewController {
 
@@ -18,9 +19,15 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
+        let realm = RLMRealm.defaultRealm()
+        realm.beginWriteTransaction()
+        
         todo.name = nameText.text
         todo.note = noteText.text
         todo.completed = completedSwitch.on
+        
+        realm.commitWriteTransaction()
+        
         navigationController?.popViewControllerAnimated(true)
     }
     

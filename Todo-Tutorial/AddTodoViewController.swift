@@ -8,20 +8,14 @@
 
 import UIKit
 
-protocol AddTodoViewControllerDelegate {
-    func addNew(todo: TodoItem)
-}
-
 class AddTodoViewController: UIViewController {
 
-    var delegate: AddTodoViewControllerDelegate!
-    
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var noteText: UITextField!
     
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
-        delegate.addNew(TodoItem(name: nameText.text, note: noteText.text))
+        TodoStore.sharedInstance.addTodo(nameText.text, note: noteText.text)
         navigationController?.popViewControllerAnimated(true)
     }
     

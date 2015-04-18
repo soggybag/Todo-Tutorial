@@ -8,10 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddTodoViewControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var array = [TodoItem]()
-    
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,24 +19,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    // MARK: Add Todo Delegate Methods
-    
-    func addNew(todo: TodoItem) {
-        array.append(todo)
-        tableView.reloadData()
-    }
-    
-    
     // MARK: Segue Methods
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "AddTodoSegue" {
             let destVC = segue.destinationViewController as! AddTodoViewController
-            destVC.delegate = self
+            
         } else if segue.identifier == "DetailSegue" {
             let destVC = segue.destinationViewController as! DetailViewController
             if let indexPath = tableView.indexPathForSelectedRow() {
-                destVC.todo = array[indexPath.row]
+                destVC.todo = TodoStore.sharedInstance.get(indexPath.row)
             }
         }
     }
@@ -47,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: Table View Delegate Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return TodoStore.sharedInstance.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,7 +48,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.textColor = color3
         cell.detailTextLabel?.textColor = color5
         
-        let todo = array[indexPath.row]
+        let todo = TodoStore.sharedInstance.get(indexPath.row)
+        
         cell.textLabel?.text = todo.name
         cell.detailTextLabel?.text = todo.note
         
@@ -79,7 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            array.removeAtIndex(indexPath.row)
+            TodoStore.sharedInstance.removeAt(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
         }
     }
@@ -104,8 +95,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let todo = array.removeAtIndex(sourceIndexPath.row)
-        array.insert(todo, atIndex: destinationIndexPath.row)
+        // let todo = array.removeAtIndex(sourceIndexPath.row)
+        // array.insert(todo, atIndex: destinationIndexPath.row)
     }
     
     
@@ -115,9 +106,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        array.append(TodoItem(name: "Hello", note: "World"))
-        array.append(TodoItem(name: "Foo", note: "Bar"))
-        array.append(TodoItem(name: "Eat", note: "Lunch"))
+        
     }
     
     override func viewWillAppear(animated: Bool) {

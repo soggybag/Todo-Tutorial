@@ -7,15 +7,10 @@
 //
 
 import Foundation
+import Realm
 
-class TodoItem {
-    var name = ""
-    var note = ""
-    var completed = false
-    
-    init(name: String, note: String) {
-        self.name = name
-        self.note = note
-    }
-    
+class TodoItem: RLMObject {
+    dynamic var name = ""
+    dynamic var note = ""
+    dynamic var completed = false
 }

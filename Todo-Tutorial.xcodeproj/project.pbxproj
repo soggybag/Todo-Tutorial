@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B21951C1AE2261D005F9FFE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B21951B1AE2261D005F9FFE /* Realm.framework */; };
+		7B21951E1AE22638005F9FFE /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21951D1AE22638005F9FFE /* RLMSupport.swift */; };
+		7B2195201AE226A7005F9FFE /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B21951F1AE226A7005F9FFE /* libc++.dylib */; };
+		7B2195251AE22AAE005F9FFE /* TodoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2195241AE22AAE005F9FFE /* TodoStore.swift */; };
 		7B3CBB4E1AC5FE8000B42B9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3CBB4D1AC5FE8000B42B9E /* AppDelegate.swift */; };
 		7B3CBB501AC5FE8000B42B9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3CBB4F1AC5FE8000B42B9E /* ViewController.swift */; };
 		7B3CBB531AC5FE8000B42B9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B3CBB511AC5FE8000B42B9E /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B21951B1AE2261D005F9FFE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		7B21951D1AE22638005F9FFE /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = ../RLMSupport.swift; sourceTree = "<group>"; };
+		7B21951F1AE226A7005F9FFE /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		7B2195241AE22AAE005F9FFE /* TodoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoStore.swift; sourceTree = "<group>"; };
 		7B3CBB481AC5FE8000B42B9E /* Todo-Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo-Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3CBB4C1AC5FE8000B42B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B3CBB4D1AC5FE8000B42B9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2195201AE226A7005F9FFE /* libc++.dylib in Frameworks */,
+				7B21951C1AE2261D005F9FFE /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B2195211AE226B8005F9FFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B21951F1AE226A7005F9FFE /* libc++.dylib */,
+				7B21951B1AE2261D005F9FFE /* Realm.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		7B3CBB3F1AC5FE8000B42B9E = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +103,17 @@
 		7B3CBB4A1AC5FE8000B42B9E /* Todo-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				7B21951D1AE22638005F9FFE /* RLMSupport.swift */,
 				7B3CBB4D1AC5FE8000B42B9E /* AppDelegate.swift */,
 				7B3CBB4F1AC5FE8000B42B9E /* ViewController.swift */,
 				7B3CBB6F1AC6098B00B42B9E /* AddTodoViewController.swift */,
 				7BB1A9071ADB854B00699EB3 /* DetailViewController.swift */,
 				7B3CBB6D1AC601D000B42B9E /* TodoItem.swift */,
+				7B2195241AE22AAE005F9FFE /* TodoStore.swift */,
 				7B3CBB511AC5FE8000B42B9E /* Main.storyboard */,
 				7B3CBB541AC5FE8000B42B9E /* Images.xcassets */,
 				7B3CBB561AC5FE8100B42B9E /* LaunchScreen.xib */,
+				7B2195211AE226B8005F9FFE /* Frameworks */,
 				7B3CBB4B1AC5FE8000B42B9E /* Supporting Files */,
 			);
 			path = "Todo-Tutorial";
@@ -222,9 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B3CBB701AC6098B00B42B9E /* AddTodoViewController.swift in Sources */,
+				7B21951E1AE22638005F9FFE /* RLMSupport.swift in Sources */,
 				7B3CBB501AC5FE8000B42B9E /* ViewController.swift in Sources */,
 				7BB1A9081ADB854B00699EB3 /* DetailViewController.swift in Sources */,
 				7B3CBB6E1AC601D000B42B9E /* TodoItem.swift in Sources */,
+				7B2195251AE22AAE005F9FFE /* TodoStore.swift in Sources */,
 				7B3CBB4E1AC5FE8000B42B9E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Todo-Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Todo-Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
